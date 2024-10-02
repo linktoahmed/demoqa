@@ -1,0 +1,22 @@
+{
+  "name": "demoqa",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/linktoahmed/demoqa.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/linktoahmed/demoqa/issues"
+  },
+  "homepage": "https://github.com/linktoahmed/demoqa#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.47.2",
+    "@types/node": "^22.7.4"
+  }
+}
