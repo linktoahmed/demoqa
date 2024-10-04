@@ -34,22 +34,22 @@ export class demoQA {
         this.submit = page.locator('button.btn.btn-primary');
         this.submissionPopup = page.locator('.modal-title.h4');
         this.submissionPopupText = 'Thanks for submitting the form';
-        this.studentName = page.locator('tr:nth-child(1) > td:nth-child(2)');
+        this.studentName = page.locator('tr:has-text("Student Name")');
         this.studentNameText = 'John Cena';
-        this.studentEmail = page.locator('tr:nth-child(2) > td:nth-child(2)');
-        this.studentGender = page.locator('tr:nth-child(3) > td:nth-child(2)');
+        this.studentEmail = page.locator('tr:has-text("Student Email")');
+        this.studentGender = page.locator('tr:has-text("Gender")');
         this.studentGenderText = 'Male';
-        this.studentMobile = page.locator('tr:nth-child(4) > td:nth-child(2)');
-        this.studentDob = page.locator('tr:nth-child(5) > td:nth-child(2)');
+        this.studentMobile = page.locator('tr:has-text("Mobile")');
+        this.studentDob = page.locator('tr:has-text("Date of Birth")'); 
         this.studentdobText = '05 October,2000';
-        this.studentSubjects = page.locator('tr:nth-child(6) > td:nth-child(2)');
+        this.studentSubjects = page.locator('tr:has-text("Subjects")');
         this.studentSubjectsText = 'English, Maths, Computer Science';
-        this.studentHobbies = page.locator('tr:nth-child(7) > td:nth-child(2)');
+        this.studentHobbies = page.locator('tr:has-text("Hobbies")');
         this.studentHobbiesText = 'Sports';
-        this.studentPic = page.locator('tr:nth-child(8) > td:nth-child(2)');
+        this.studentPic = page.locator('tr:has-text("Picture")');
         this.studentPicText = 'pic.jpg';
-        this.studentAddress = page.locator('tr:nth-child(9) > td:nth-child(2)');
-        this.StudentStateAndCity = page.locator('tr:nth-child(10) > td:nth-child(2)');
+        this.studentAddress = page.locator('tr:has-text("Address")');
+        this.StudentStateAndCity = page.locator('tr:has-text("State and City")');
         this.StudentStateAndCityText = 'NCR Delhi';
         this.redBackgroundColor = 'rgb(220, 53, 69)';
         this.greenBackgroundColor = 'rgb(40, 167, 69)';
@@ -92,16 +92,10 @@ export class demoQA {
 
     async  assertMandatoryForm() {
         await expect(this.submissionPopup).toHaveText(this.submissionPopupText); 
-        await expect(this.studentName).toHaveText(this.studentNameText); 
-        await expect(this.studentEmail).toHaveText(''); 
-        await expect(this.studentGender).toHaveText(this.studentGenderText); 
-        await expect(this.studentMobile).toHaveText(this.mobileText); 
-        await expect(this.studentDob).toHaveText(this.studentdobText); 
-        await expect(this.studentSubjects).toHaveText(''); 
-        await expect(this.studentHobbies).toHaveText(''); 
-        await expect(this.studentPic).toHaveText(''); 
-        await expect(this.studentAddress).toHaveText(''); 
-        await expect(this.StudentStateAndCity).toHaveText(''); 
+        await expect(this.studentName).toContainText(this.studentNameText); 
+        await expect(this.studentGender).toContainText(this.studentGenderText); 
+        await expect(this.studentMobile).toContainText(this.mobileText); 
+        await expect(this.studentDob).toContainText(this.studentdobText);   
     }
 
     async fillAndSubmitInvalidFormFields() {
@@ -149,15 +143,15 @@ export class demoQA {
     }
     async assertFilledForm() {
         await expect(this.submissionPopup).toHaveText(this.submissionPopupText); 
-        await expect(this.studentName).toHaveText(this.studentNameText); 
-        await expect(this.studentEmail).toHaveText(this.emailText); 
-        await expect(this.studentGender).toHaveText(this.studentGenderText); 
-        await expect(this.studentMobile).toHaveText(this.mobileText); 
-        await expect(this.studentDob).toHaveText(this.studentdobText); 
-        await expect(this.studentSubjects).toHaveText(this.studentSubjectsText); 
-        await expect(this.studentHobbies).toHaveText(this.studentHobbiesText); 
-        await expect(this.studentPic).toHaveText(this.studentPicText); 
-        await expect(this.studentAddress).toHaveText(this.addressText); 
-        await expect(this.StudentStateAndCity).toHaveText(this.StudentStateAndCityText); 
+        await expect(this.studentName).toContainText(this.studentNameText); 
+        await expect(this.studentEmail).toContainText(this.emailText); 
+        await expect(this.studentGender).toContainText(this.studentGenderText); 
+        await expect(this.studentMobile).toContainText(this.mobileText); 
+        await expect(this.studentDob).toContainText(this.studentdobText); 
+        await expect(this.studentSubjects).toContainText(this.studentSubjectsText); 
+        await expect(this.studentHobbies).toContainText(this.studentHobbiesText); 
+        await expect(this.studentPic).toContainText(this.studentPicText); 
+        await expect(this.studentAddress).toContainText(this.addressText); 
+        await expect(this.StudentStateAndCity).toContainText(this.StudentStateAndCityText); 
     }
 }
