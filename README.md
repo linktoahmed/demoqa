@@ -5,7 +5,7 @@ This project demonstrates how to automate filling out a form with various fields
 Steps to Set Up and Run the Project:
 
 Clone the Repository:
-git clone https://github.com/linktoahmed/Playwright.git
+git clone https://github.com/linktoahmed/demoqa.git
 
 Navigate to the Project Directory:
 cd demoqa
